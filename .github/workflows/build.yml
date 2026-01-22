@@ -184,6 +184,12 @@ jobs:
       - name: List artifacts
         run: find artifacts -type f
 
+      - name: Generate checksums
+        run: |
+          cd artifacts
+          find . -type f \( -name "*.zip" -o -name "*.dmg" -o -name "*.AppImage" \) -exec sha256sum {} \; > ../SHA256SUMS.txt
+          cat ../SHA256SUMS.txt
+
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
@@ -192,6 +198,7 @@ jobs:
             artifacts/SSHTerminalManager-macOS/*.dmg
             artifacts/SSHTerminalManager-macOS/*.zip
             artifacts/SSHTerminalManager-Linux-x86_64/*.AppImage
+            SHA256SUMS.txt
           draft: false
           prerelease: false
           generate_release_notes: true
