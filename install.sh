@@ -90,8 +90,9 @@ LAUNCHER
 $SUDO chmod +x "$BIN_LINK"
 echo -e "${GREEN}[+] Command 'sshm' created${NC}"
 
-# Set permissions for data directory (user-writable)
-$SUDO chmod 777 "$INSTALL_DIR/data"
+# Set secure permissions for data directory
+$SUDO chmod 700 "$INSTALL_DIR/data"
+$SUDO chown "$USER:$USER" "$INSTALL_DIR/data"
 
 echo ""
 echo -e "${GREEN}╔═══════════════════════════════════════════╗${NC}"
