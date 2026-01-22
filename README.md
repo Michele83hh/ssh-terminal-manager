@@ -23,7 +23,7 @@ A modern SSH terminal manager built with PyQt6, featuring tabbed sessions, conne
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/ssh-terminal-manager.git
+   git clone https://github.com/Michele83hh/ssh-terminal-manager.git
    cd ssh-terminal-manager
    ```
 
@@ -48,6 +48,62 @@ A modern SSH terminal manager built with PyQt6, featuring tabbed sessions, conne
 ## Configuration
 
 Settings are stored in `config/settings.json`. The application creates a SQLite database in `data/connections.db` for storing connection profiles (credentials are encrypted).
+
+## Building Installers
+
+### Quick Build (All Platforms)
+
+```bash
+python build_scripts/build.py
+```
+
+This creates a standalone executable in `dist/SSHTerminalManager/`.
+
+### Windows Installer (.exe)
+
+Requirements:
+- [Inno Setup 6](https://jrsoftware.org/isdl.php) (optional, for installer)
+
+```bash
+# Option 1: Using batch script
+build_scripts\build_windows.bat
+
+# Option 2: Using Python script
+python build_scripts\build.py
+```
+
+Output:
+- `dist/SSHTerminalManager/` - Standalone executable
+- `dist/SSHTerminalManager_Setup_1.0.0.exe` - Installer (if Inno Setup installed)
+
+### macOS (.app / .dmg)
+
+Requirements:
+- [create-dmg](https://github.com/create-dmg/create-dmg) (optional, for DMG)
+
+```bash
+chmod +x build_scripts/build_macos.sh
+./build_scripts/build_macos.sh
+```
+
+Output:
+- `dist/SSH Terminal Manager.app` - Application bundle
+- `dist/SSHTerminalManager.dmg` - DMG installer (if create-dmg installed)
+
+### Linux (AppImage / .deb)
+
+Requirements:
+- `dpkg-deb` (for .deb package)
+- ImageMagick (optional, for icon conversion)
+
+```bash
+chmod +x build_scripts/build_linux.sh
+./build_scripts/build_linux.sh
+```
+
+Output:
+- `dist/SSHTerminalManager-1.0.0-x86_64.AppImage` - AppImage
+- `dist/ssh-terminal-manager_1.0.0_amd64.deb` - Debian package
 
 ## Security
 

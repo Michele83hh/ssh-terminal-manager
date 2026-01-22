@@ -64,3 +64,9 @@ logs/
 *.tmp
 *.temp
 *.bak
+
+# Build artifacts
+build/
+dist/
+*.spec.bak
+build_scripts/appimagetool-*.AppImage
