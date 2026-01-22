@@ -43,40 +43,51 @@ A modern SSH terminal manager built with PyQt6, featuring tabbed sessions, conne
 
 For headless systems or when you prefer a terminal interface:
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Michele83hh/ssh-terminal-manager.git
-   cd ssh-terminal-manager
-   ```
+```bash
+# Clone and install (one-liner)
+git clone https://github.com/Michele83hh/ssh-terminal-manager.git && cd ssh-terminal-manager && chmod +x install.sh && sudo ./install.sh
+```
 
-2. Install minimal dependencies:
-   ```bash
-   pip install -r requirements-cli.txt
-   ```
+Or step by step:
 
-3. Run the CLI:
-   ```bash
-   python ssh_manager_cli.py
-   ```
+```bash
+git clone https://github.com/Michele83hh/ssh-terminal-manager.git
+cd ssh-terminal-manager
+chmod +x install.sh
+sudo ./install.sh
+```
+
+The installer:
+- Installs all dependencies automatically
+- Creates the `sshm` command system-wide
+- Sets up a Python virtual environment in `/opt/ssh-terminal-manager`
 
 #### CLI Commands
 
 ```bash
 # Interactive menu
-python ssh_manager_cli.py
+sshm
 
 # List all saved connections
-python ssh_manager_cli.py list
+sshm list
 
 # Connect to a saved connection
-python ssh_manager_cli.py connect webserver
+sshm connect webserver
 
 # Quick connect (without saving)
-python ssh_manager_cli.py quick root@10.0.0.1
-python ssh_manager_cli.py quick user@host:2222
+sshm quick root@10.0.0.1
+sshm quick user@host:2222
 
 # Add a new connection
-python ssh_manager_cli.py add
+sshm add
+```
+
+#### Uninstall
+
+```bash
+sudo ./uninstall.sh
+# or
+sudo rm /usr/local/bin/sshm && sudo rm -rf /opt/ssh-terminal-manager
 ```
 
 #### CLI Features
