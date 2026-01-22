@@ -1,0 +1,11 @@
+# SSH Terminal Manager - CLI Version
+# Minimal dependencies for terminal-only usage (Kali Linux, etc.)
+
+# SSH Library
+paramiko==3.5.0
+
+# Encryption & Security
+cryptography==44.0.0
+
+# Note: No PyQt6, keyring, or GUI dependencies needed
+# The CLI version uses simple password-based encryption without DPAPI

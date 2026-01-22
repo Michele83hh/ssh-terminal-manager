@@ -21,6 +21,8 @@ A modern SSH terminal manager built with PyQt6, featuring tabbed sessions, conne
 
 ## Installation
 
+### GUI Version (Windows/Linux/macOS)
+
 1. Clone the repository:
    ```bash
    git clone https://github.com/Michele83hh/ssh-terminal-manager.git
@@ -36,6 +38,53 @@ A modern SSH terminal manager built with PyQt6, featuring tabbed sessions, conne
    ```bash
    python main.py
    ```
+
+### CLI Version (Kali Linux / Terminal-only)
+
+For headless systems or when you prefer a terminal interface:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Michele83hh/ssh-terminal-manager.git
+   cd ssh-terminal-manager
+   ```
+
+2. Install minimal dependencies:
+   ```bash
+   pip install -r requirements-cli.txt
+   ```
+
+3. Run the CLI:
+   ```bash
+   python ssh_manager_cli.py
+   ```
+
+#### CLI Commands
+
+```bash
+# Interactive menu
+python ssh_manager_cli.py
+
+# List all saved connections
+python ssh_manager_cli.py list
+
+# Connect to a saved connection
+python ssh_manager_cli.py connect webserver
+
+# Quick connect (without saving)
+python ssh_manager_cli.py quick root@10.0.0.1
+python ssh_manager_cli.py quick user@host:2222
+
+# Add a new connection
+python ssh_manager_cli.py add
+```
+
+#### CLI Features
+
+- Same encrypted credential storage as GUI version
+- Import from `~/.ssh/config`
+- Host key verification with known_hosts
+- Ctrl+] to disconnect from session
 
 ## Dependencies
 
