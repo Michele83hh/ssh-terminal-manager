@@ -1,0 +1,72 @@
+{
+  "application": {
+    "name": "SSH Terminal Manager",
+    "version": "1.0.0"
+  },
+  "terminal": {
+    "defaults": {
+      "font_family": "Consolas",
+      "font_size": 11,
+      "foreground_color": "#e5e5e5",
+      "background_color": "#1e1e1e",
+      "scrollback_lines": 10000,
+      "cursor_style": "block",
+      "paste_on_right_click": true
+    },
+    "color_schemes": {
+      "default_dark": {
+        "foreground": "#e5e5e5",
+        "background": "#1e1e1e",
+        "black": "#000000",
+        "red": "#cd3131",
+        "green": "#0dbc79",
+        "yellow": "#e5e510",
+        "blue": "#2472c8",
+        "magenta": "#bc3fbc",
+        "cyan": "#11a8cd",
+        "white": "#e5e5e5",
+        "bright_black": "#666666",
+        "bright_red": "#f14c4c",
+        "bright_green": "#23d18b",
+        "bright_yellow": "#f5f543",
+        "bright_blue": "#3b8eea",
+        "bright_magenta": "#d670d6",
+        "bright_cyan": "#29b8db",
+        "bright_white": "#ffffff"
+      },
+      "solarized_dark": {
+        "foreground": "#839496",
+        "background": "#002b36"
+      },
+      "monokai": {
+        "foreground": "#f8f8f2",
+        "background": "#272822"
+      }
+    }
+  },
+  "connection": {
+    "defaults": {
+      "port": 22,
+      "timeout_seconds": 30,
+      "keepalive_interval_seconds": 60,
+      "backspace_key": "Control-H"
+    }
+  },
+  "authentik": {
+    "enabled": false,
+    "base_url": "",
+    "client_id": "",
+    "redirect_port": 8400,
+    "scopes": "openid profile email"
+  },
+  "security": {
+    "use_dpapi": true,
+    "pbkdf2_iterations": 600000,
+    "encryption_algorithm": "AES-256-GCM",
+    "host_key_verification": true,
+    "known_hosts_file": "data/known_hosts",
+    "master_password_timeout_minutes": 15,
+    "session_inactivity_timeout_minutes": 30,
+    "audit_logging": true
+  }
+}

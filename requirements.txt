@@ -1,0 +1,24 @@
+# SSH Terminal Manager Dependencies
+# Pinned versions for security and reproducibility (January 2026)
+
+# GUI Framework
+PyQt6==6.7.1
+
+# SSH Library
+paramiko==3.5.0
+
+# Terminal Emulation
+pyte==0.8.2
+
+# OAuth2/OIDC (optional, for Authentik integration)
+authlib==1.4.0
+httpx==0.28.1
+
+# Encryption & Security
+cryptography==44.0.0
+keyring==25.5.0
+
+# Note: Run `pip install --upgrade -r requirements.txt` to update
+# Review security advisories before updating:
+# - https://pypi.org/project/paramiko/#history
+# - https://pypi.org/project/cryptography/#history
